@@ -9,6 +9,7 @@ class Propiedades extends Model
 {
     use HasFactory;
     protected $table = 'mis_propiedades';
+    protected $primaryKey = 'id';
     public $timestamps = true;
 
     protected $fillable =[

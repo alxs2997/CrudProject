@@ -4,10 +4,10 @@
     <div class="row">
      <div class="col-lg-12 margin-tb">
             <div clas="pull-left">
-                <h1>Agregar nuevas propiedades<h1>
+                <h1 class="text-center">Agregar Nuevas Propiedades<h1>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ URL::to('propiedades/') }}" title="Regresar"> <i class="fas fa-backward"></i> </a>
+                <a class="btn btn-warning" href="{{ URL::to('propiedades/') }}" title="Regresar"> <i class="fas fa-backward"></i> </a>
             </div>
         </div>
     </div>
@@ -54,3 +54,4 @@
                 <button type="submit" class="btn btn-dark">Guardar</button>
             </div>
         </div>
+@endsection

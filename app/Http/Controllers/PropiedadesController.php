@@ -28,6 +28,7 @@ class PropiedadesController extends Controller
     public function create()
     {
         //
+        return view('propiedades.create');
 
     }
 
@@ -77,8 +78,9 @@ class PropiedadesController extends Controller
 
     {
         //
-        $propiedades = Propiedades::find($id);
-        return view('propiedades.edit', compact('propiedades'));
+        $propiedades = Propiedades::find($id)->paginate(5);
+        return view('propiedades.edit', compact('propiedades'))
+        ->with('i', (request()->input('page', 1) -1) *5);
     }
 
     /**
