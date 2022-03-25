@@ -22,20 +22,35 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('propiedades.store') }}" method="POST"></form>
+    <form action="{{ route('mis_propiedades.store') }}" method="POST"></form>
         @csrf
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-3">
                 <div class="form-group">
                     <strong>Dueño:</strong>
                     <input type="text" name="duenio" id="duenio" class="form-control" placeholder="Nombre del dueño">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-3">
                 <div class="form-group">
                     <strong>Tipo de propiedad:</strong>
                     <input type="text" name="tipo_propiedad" id="tipo_propiedad" class="form-control" placeholder="vehiculo,casa,apartamento...">
                 </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="form-group">
+                    <strong>Estado:</strong>
+                    <input type="text" name="estado" id="estado" class="form-control" placeholder="compra,venta,alquiler...">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-1">
+                <div class="form-group">
+                    <strong>Cantidad:</strong>
+                    <input type="number" name="cantidad" id="cantidad" class="form-control" placeholder="1">
+                </div>
+            </div>
+            <div class="col-x2-12 col-sm-12 col-md-1 text-center">
+                <button type="submit" class="btn btn-dark">Guardar</button>
             </div>
         </div>

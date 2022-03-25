@@ -28,6 +28,7 @@ class PropiedadesController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
