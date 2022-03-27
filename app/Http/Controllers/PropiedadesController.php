@@ -28,6 +28,7 @@ class PropiedadesController extends Controller
     public function create()
     {
         //
+        return view('propiedades.create');
 
     }
 
@@ -88,10 +89,17 @@ class PropiedadesController extends Controller
      * @param  \App\Models\Propiedades  $propiedades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Propiedades $propiedades)
+    public function update(Request $request, $id)
+    
     {
-        //
-    }
+        $propiedades=Propiedades::find($id);
+        $propiedades->duenios = $request->duenios;
+        $propiedades->tipo_propiedad = $request->tipo_propiedad;
+        $propiedades->estado = $request->estado;
+        $propiedades->cantidad = $request->cantidad;
+        $propiedades->save();
+        return redirect('mis_propiedades');
+    }  
 
     /**
      * Remove the specified resource from storage.
@@ -99,8 +107,13 @@ class PropiedadesController extends Controller
      * @param  \App\Models\Propiedades  $propiedades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Propiedades $propiedades)
-    {
+    public function destroy($id)
+    
         //
-    }
+        {
+            $propiedades = Propiedades::find($id);
+                $movie->delete();
+                return redirect()->back();
+            }
+
 }
