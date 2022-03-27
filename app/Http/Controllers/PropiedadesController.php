@@ -12,9 +12,10 @@ class PropiedadesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $texto=trim($request->get('text'));
         $propiedades = Propiedades::latest()->paginate(5);
         return view('propiedades.index' , compact('propiedades'))
             ->with('i', (request()->input('page', 1) -1) *5);
@@ -112,7 +113,7 @@ class PropiedadesController extends Controller
         //
         {
             $propiedades = Propiedades::find($id);
-                $movie->delete();
+                $propiedades->delete();
                 return redirect()->back();
             }
 
