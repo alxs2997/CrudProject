@@ -13,7 +13,7 @@ class Propiedades extends Model
     public $timestamps = true;
 
     protected $fillable =[
-        'duenio',
+        'duenios',
         'tipo_propiedad',
         'estado',
         'cantidad',

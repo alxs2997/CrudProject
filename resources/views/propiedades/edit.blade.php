@@ -7,7 +7,7 @@
                 <h1 class="col-md-1 text-center">Editar Lista de Propiedades<h1>
             </div>
             <div class="pull-right">
-                <a class="btn btn-warning" href="{{ URL::to('propiedades/') }}" title="Regresar"> <i class="fas fa-backward"></i> </a>
+                <a class="btn btn-warning" href="{{ URL::to('mis_propiedades/') }}" title="Regresar"> <i class="fas fa-backward"></i> </a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('mis_propiedades.update', $propiedades->id) }}" method="POST"></form>
+    <form action="{{ route('mis_propiedades.update', $propiedades->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -30,7 +30,7 @@
             <div class="col-xs-12 col-sm-12 col-md-3">
                 <div class="form-group">
                     <strong>Dueño:</strong>
-                    <input type="text" name="duenio" value="{{ $propiedades->duenio }}" id="duenio" class="form-control" placeholder="Nombre del dueño">
+                    <input type="text" name="duenios" value="{{ $propiedades->duenios }}" id="duenios" class="form-control" placeholder="Nombre del dueño">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3">
@@ -55,4 +55,5 @@
                 <button type="submit" class="btn btn-dark">Editar</button>
             </div>
         </div>
+    </form>    
  @endsection

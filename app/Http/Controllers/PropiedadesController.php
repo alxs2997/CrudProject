@@ -78,9 +78,8 @@ class PropiedadesController extends Controller
 
     {
         //
-        $propiedades = Propiedades::find($id)->paginate(5);
-        return view('propiedades.edit', compact('propiedades'))
-        ->with('i', (request()->input('page', 1) -1) *5);
+        $propiedades = Propiedades::find($id);
+        return view('propiedades.edit', compact('propiedades'));
     }
 
     /**
@@ -90,10 +89,17 @@ class PropiedadesController extends Controller
      * @param  \App\Models\Propiedades  $propiedades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Propiedades $propiedades)
+    public function update(Request $request, $id)
+    
     {
-        //
-    }
+        $propiedades=Propiedades::find($id);
+        $propiedades->duenios = $request->duenios;
+        $propiedades->tipo_propiedad = $request->tipo_propiedad;
+        $propiedades->estado = $request->estado;
+        $propiedades->cantidad = $request->cantidad;
+        $propiedades->save();
+        return redirect('mis_propiedades');
+    }  
 
     /**
      * Remove the specified resource from storage.

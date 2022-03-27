@@ -5,6 +5,10 @@
      <div class="col-lg-12 margin-tb">
                 <h1 class="col-x2-12 col-sm-12 col-md-12 text-center">Listado de Propiedades</h1>
     </div>
+                <div class="text-center">
+
+                    <a href="{{ URL::to('mis_propiedades/create') }}" class="btn btn-warning">Añadir Propiedad <i class="fas fa-forward"></i></a>
+                </div>
     <table class="table table-bordered table-responsive-lg">
         <thead>
             <tr>
@@ -21,23 +25,23 @@
             @foreach($propiedades as $propiedad)
             <tr>
                 <td>{{ $propiedad->id }}</td>
-                <td>{{ $propiedad->duenio }}</td>
+                <td>{{ $propiedad->duenios }}</td>
                 <td>{{ $propiedad->tipo_propiedad }}</td>
                 <td>{{ $propiedad->estado }}</td>
                 <td>{{ $propiedad->cantidad }}</td>
-                <td>{{ $propiedad->create_at }}</td>
+                <td>{{ $propiedad->created_at }}</td>
                 <td>
-                    <form action="{{ URL:: to('/propiedad'.$propiedad->id) }}" method="POST">
-                        <a href="{{ url('/propiedad/'.$propiedad->id) }}" title="show">
+                    <form action="{{ URL:: to('/mis_propiedades'.$propiedad->id) }}" method="POST">
+                        <a href="{{ url('/mis_propiedades/'.$propiedad->id) }}" title="show">
                             <i class="fas fa-eye text-success fa-lg"></i>
                         </a>
-                        <a href="{{ URL:: to('propiedad/' .$propiedad->id.'/edit') }}">
+                        <a href="{{ URL:: to('mis_propiedades/' .$propiedad->id.'/edit') }}">
                             <i class="fas fa-edit fa-lg"></i>
                         </a>
                             @csrf
-                            @method_field('DELETE')
+                            @method('DELETE')
                             <button type="submit" title="delete" style="border: none; background-color:transparent;">
-                            <i class="fas fa-trash fa-lg text-danger">¿desea eliminar el registro?</i>
+                            <i class="fas fa-trash text-danger"></i>
                         </button>
                         
                     </form>
