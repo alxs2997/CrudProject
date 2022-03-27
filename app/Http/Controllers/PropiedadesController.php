@@ -107,8 +107,13 @@ class PropiedadesController extends Controller
      * @param  \App\Models\Propiedades  $propiedades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Propiedades $propiedades)
-    {
+    public function destroy($id)
+    
         //
-    }
+        {
+            $propiedades = Propiedades::find($id);
+                $movie->delete();
+                return redirect()->back();
+            }
+
 }

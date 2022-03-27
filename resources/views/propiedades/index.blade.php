@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="row">
      <div class="col-lg-12 margin-tb">
                 <h1 class="col-x2-12 col-sm-12 col-md-12 text-center">Listado de Propiedades</h1>
@@ -52,5 +53,5 @@
         @endforeach
     </tbody>
 </table>
-{!! $propiedades->links()!!}
+{!! $propiedades->links() !!}
 @endsection

@@ -4,7 +4,7 @@
     <div class="row">
      <div class="col-lg-12 margin-tb">
             <div clas="pull-left">
-                <h1 class="col-md-1 text-center">Editar Lista de Propiedades<h1>
+                <h1 class="text-center">Editar Lista de Propiedades para {{ $propiedades->duenios }}<h1>
             </div>
             <div class="pull-right">
                 <a class="btn btn-warning" href="{{ URL::to('mis_propiedades/') }}" title="Regresar"> <i class="fas fa-backward"></i> </a>
